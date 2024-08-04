@@ -22,19 +22,18 @@ def verificaNumeroReal(numero):
         int(numero)
         return True
     except (ValueError, TypeError):
-        # Se ocorrer um ValueError ou TypeError, a string não é um número inteiro
         print('\n')
-        print("O valor inserido deve ser um número inteiro válido!")
+        print("""\033[1m O valor inserido deve ser um número inteiro válido! \033[0m""")
         print('\n')
         exit()
 
 def verificaNumeroRomano(numero):
     # Expressão regular para números romanos válidos
-    roman_pattern = r'^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$'
-    verificaRomano = bool(re.match(roman_pattern, numero))
+    padraoComparacao = r'^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$'
+    verificaRomano = bool(re.match(padraoComparacao, numero))
     if verificaRomano == False:
         print('\n')
-        print("O valor inserido deve ser um número romano válido!")
+        print("""\033[1m  O valor inserido deve ser um número romano válido! \033[0m""")
         print('\n')
         exit()
 
@@ -46,7 +45,8 @@ match inputOption:
         real = Real(int(inputNumber))
         numeroConvertido = real.converteRealParaRomano()
         print('\n')
-        print("Número romano:", numeroConvertido)
+        print("""\033[1m Número romano: \033[0m""",numeroConvertido)
+        print('\n')
     case '2':
         print('\n')
         inputNumber = input("Digite um número romano: ")
@@ -54,9 +54,11 @@ match inputOption:
         romano = Romano(inputNumber)
         numeroConvertido = romano.converteRomanoParaReal()
         print('\n')
-        print("Número real:", numeroConvertido)
+        print("""\033[1m Número real: \033[0m""",numeroConvertido)
+        print('\n')
     case '3':
        exit()  
     case _:
         print('\n')
-        print("Opção não encontrada.")
+        print("""\033[1m  Opção não encontrada. \033[0m""")
+        print('\n')

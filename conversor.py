@@ -23,7 +23,7 @@ def verificaNumeroReal(numero):
         return True
     except (ValueError, TypeError):
         print('\n')
-        print("""\033[1m O valor inserido deve ser um número inteiro válido! \033[0m""")
+        print("O valor inserido deve ser um número inteiro válido!")
         print('\n')
         exit()
 
@@ -33,7 +33,7 @@ def verificaNumeroRomano(numero):
     verificaRomano = bool(re.match(padraoComparacao, numero))
     if verificaRomano == False:
         print('\n')
-        print("""\033[1m  O valor inserido deve ser um número romano válido! \033[0m""")
+        print("O valor inserido deve ser um número romano válido!")
         print('\n')
         exit()
 
@@ -45,7 +45,7 @@ match inputOption:
         real = Real(int(inputNumber))
         numeroConvertido = real.converteRealParaRomano()
         print('\n')
-        print("""\033[1m Número romano: \033[0m""",numeroConvertido)
+        print("Número romano: ",numeroConvertido)
         print('\n')
     case '2':
         print('\n')
@@ -54,11 +54,11 @@ match inputOption:
         romano = Romano(inputNumber)
         numeroConvertido = romano.converteRomanoParaReal()
         print('\n')
-        print("""\033[1m Número real: \033[0m""",numeroConvertido)
+        print("Número real: ",numeroConvertido)
         print('\n')
     case '3':
        exit()  
     case _:
         print('\n')
-        print("""\033[1m  Opção não encontrada. \033[0m""")
+        print("Opção não encontrada. ")
         print('\n')
